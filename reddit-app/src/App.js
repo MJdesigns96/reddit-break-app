@@ -5,7 +5,7 @@ import { Post } from './components/Navbar/content-reel/post/posts';
 
 const app = () => {
   const [posts, setPosts] = useState([]);
-  const [subreddit, setSubreddit] = useState('webdev');
+  const [subreddit, setSubreddit] = useState('baseball');
 
   useEffect(()=> {
     fetch("https://www.reddit.com/r/baseball.json").then(response => {
