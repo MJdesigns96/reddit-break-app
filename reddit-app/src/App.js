@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
+import { Button, Container, FormControl, Navbar, Form, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Post } from './components/Navbar/content-reel/post/posts';
 
@@ -24,12 +24,22 @@ const app = () => {
 
   return (
     <Container>
-      <div className='navbar'>
-          <a className='navbar-brand' href={''}>
-            <img src='https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png' width="32px" style={({marginRight: 8})} alt='logo' />
-            Reddit Minimal
-          </a> 
-      </div>
+      <Navbar>
+        <Navbar.Brand href="#">
+          <img src='https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png' width="32px" style={({marginRight: 8})} alt='logo' />
+          Reddit Minimal
+        </Navbar.Brand>
+        <Col></Col>
+        <Form className="d-flex">
+          <FormControl 
+            type="search"
+            placeholder='Search Subreddits'
+            className='me-2'
+            aria-label='Search Subreddits'
+          />
+          <Button variant='light'>Search</Button>
+        </Form>
+      </Navbar>
       <div className='card'>
          {
           (posts != null) ? posts.map((post, index) => <Post key={index} posts={post.data} />) : ''
