@@ -3,12 +3,12 @@ import { Button, Container, FormControl, Navbar, Form, Row, Col } from 'react-bo
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Post } from './components/Navbar/content-reel/post/posts';
 
-const app = () => {
+const App = () => {
   const [posts, setPosts] = useState([]);
   const [subreddit, setSubreddit] = useState('baseball');
 
   useEffect(()=> {
-    fetch("https://www.reddit.com/r/baseball.json").then(response => {
+    fetch("https://www.reddit.com/r/" + subreddit + ".json").then(response => {
       if (response.status != 200) {
         console.log("Error response from server unsuccessful");
         return;
@@ -34,10 +34,11 @@ const app = () => {
           <FormControl 
             type="search"
             placeholder='Search Subreddits'
-            className='me-2'
+            className='me-2 input'
             aria-label='Search Subreddits'
+            value={subreddit}
+            onChange={e => setSubreddit(e.target.value)}
           />
-          <Button variant='light'>Search</Button>
         </Form>
       </Navbar>
       <div className='card'>
@@ -49,4 +50,5 @@ const app = () => {
   )
 }
 
-export default app;
+export default App;
+
