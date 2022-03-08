@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import moment from 'moment';
 
+export const Time = () => {
+    const getTime = (props) => {
+       var utcSeconds = props.posts.data.created_utc;
+        var time = moment.unix(utcSeconds).format("YYYY-MM-DD HH:mm");
+        var timeFromNow = moment(time).fromNow();
 
-export const Time = (props) => {
-    var utcSeconds = props.posts.created_utc;
-    var time = moment.unix(utcSeconds).format("YYYY-MM-DD HH:mm");
-    var timeFromNow = moment(time).fromNow();
+        return timeFromNow
+    }
 
-    return timeFromNow;
+    
+
+    return (
+        <Time getTime={getTime} />
+    )
     
 }
-
-export default Time;

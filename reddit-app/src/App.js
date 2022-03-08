@@ -5,7 +5,7 @@ import { Post } from './components/Navbar/content-reel/post/posts';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
-  const [subreddit, setSubreddit] = useState('baseball');
+  const [subreddit, setSubreddit] = useState('popular');
 
   useEffect(()=> {
     fetch("https://www.reddit.com/r/" + subreddit + ".json").then(response => {
@@ -21,6 +21,10 @@ const App = () => {
       });
     })
   }, [subreddit]);
+
+  //const searchSubreddit = (e) => {
+  //  if ()
+  //}
 
   return (
     <Container>
