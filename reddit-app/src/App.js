@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 import { Button, Container, FormControl, Navbar, Form, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Post } from './components/Navbar/content-reel/post/posts';
@@ -22,12 +23,8 @@ const App = () => {
     })
   }, [subreddit]);
 
-  //const searchSubreddit = (e) => {
-  //  if ()
-  //}
-
   return (
-    <Container>
+    <Container className="container">
       <Navbar>
         <Navbar.Brand href="#">
           <img src='https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png' width="32px" style={({marginRight: 8})} alt='logo' />

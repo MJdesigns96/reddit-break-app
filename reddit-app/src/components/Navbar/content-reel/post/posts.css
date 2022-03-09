@@ -1,0 +1,40 @@
+
+.card {
+    margin: 16px auto;
+    width: 90%;
+    border: .5;
+}
+
+div #upvote-counter {
+    margin-left: 16px;
+}
+
+.card-title {
+    text-decoration: none;
+    color:black;
+    margin-left: 16px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.card-title:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+#preview {
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.card-body a {
+    text-decoration: none;
+    color: rgb(83, 83, 83);
+}
+
+.card-body a:hover {
+    text-decoration: underline;
+    color: black;
+}
